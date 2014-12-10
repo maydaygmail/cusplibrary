@@ -80,7 +80,7 @@ void indices_to_offsets(const IndexArray& indices, OffsetArray& offsets)
     thrust::lower_bound(indices.begin(),
                         indices.end(),
                         thrust::counting_iterator<OffsetType>(0),
-                        thrust::counting_iterator<OffsetType>(offsets.size()),
+                        thrust::counting_iterator<OffsetType>(offsets.size()),//maybe a bug, this should be the cols length of matrix, since offsets 's length is cols length is 
                         offsets.begin());
 }
 
